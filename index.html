@@ -1,0 +1,68 @@
+<style>
+	#show_on_login
+	{
+		display: none;
+	}
+	a {
+	    height: 30px;
+		width: 200px;
+		background: #f3f3f3f3;
+		text-align: center;
+		margin-top: 20px;
+		float: left;
+		margin-right: 20px;
+	}
+
+	input{
+		width: 200px;
+		height: 30px;
+		padding-left: 5px;
+	}
+	#login_section
+	{
+		margin: 0 auto;
+		height: 300px;
+		width: 200px;
+		position: relative;
+		margin-top: 50px;
+	}
+	#show_on_login {
+		width: 200px;
+		position: relative;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	#hang_up,#connection_awaiting
+	{
+		display: none;
+	}
+	#source_video
+	{
+		    width: 400px;
+    height: 200px;
+    float: right;
+	}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="index.js"></script>
+<body>
+	<div id="login_section">
+		<input type="text" class="input_area" placeholder="choose an unique user id"></input>
+		<a id="close" onclick="login_room()">login</a>
+	</div>
+	<div id="waiting_msg"></div>
+	<div id="show_on_login">
+		<input type="text" class="input_area_user" placeholder="connect to"></input>
+		<a id="call" onclick="open_room()">call</a>
+		<br>
+	</div>
+	<div id="connection_awaiting">
+		<div id="connecting_msg"></div>
+		<a id="connect" onclick="connect()">connect</a>
+		<a id="decline" onclick="end_room()">decline</a>
+	</div>
+	<a id="hang_up" onclick="end_room()">hang up</a>
+	<video id="received_video" autoplay></video>
+	<video id="source_video" autoplay></video>
+</body>
